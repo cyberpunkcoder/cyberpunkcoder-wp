@@ -518,6 +518,7 @@ object {
 
 img {
 	height: auto;
+	width: 100%;
 	max-width: 100%;
 }
 
@@ -720,6 +721,10 @@ textarea {
 .site-main
 .post-navigation {
 	margin: 0 0 1.5em;
+}
+
+.site-banner {
+	width: 100%;
 }
 
 .comment-navigation .nav-links,

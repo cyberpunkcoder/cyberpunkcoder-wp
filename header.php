@@ -26,6 +26,12 @@
 	<a class="skip-link screen-reader-text" href="#primary"><?php esc_html_e( 'Skip to content', 'cyberpunkcoder' ); ?></a>
 
 	<header id="masthead" class="site-header">
+	<?php if ( get_header_image() ) : ?>
+		<div class="site-banner">
+			<img src="<?php header_image(); ?>" alt="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>">
+		</div>
+	<?php endif; ?>
+
 		<div class="site-branding">
 			<?php
 			the_custom_logo();

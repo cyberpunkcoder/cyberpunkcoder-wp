@@ -722,6 +722,10 @@ textarea {
 	margin: 0 0 1.5em;
 }
 
+.site-banner {
+	width: 100%;
+}
+
 .comment-navigation .nav-links,
 .posts-navigation .nav-links,
 .post-navigation .nav-links {
