@@ -472,8 +472,7 @@ big {
 /* Elements
 --------------------------------------------- */
 body {
-	background: #000100;
-	color: #6862af;
+	background: #fff;
 }
 
 hr {
@@ -713,10 +712,6 @@ textarea {
 	.main-navigation ul {
 		display: flex;
 	}
-}
-
-.site-main {
-	margin: 2.5em;
 }
 
 .site-main .comment-navigation,
