@@ -723,8 +723,19 @@ textarea {
 	margin: 0 0 1.5em;
 }
 
+.site-header {
+	position: relative;
+}
+
 .site-banner {
 	width: 100%;
+}
+
+.site-branding {
+	float: left;
+	position: absolute;
+	left: 1.5em;
+    top: 0em;
 }
 
 .comment-navigation .nav-links,
