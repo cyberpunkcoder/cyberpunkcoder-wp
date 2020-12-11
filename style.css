@@ -127,17 +127,19 @@ pre {
  */
 a {
 	text-decoration: none;
-	color: white;
-	padding: 0.25em;
-	border: 1px solid #fff;
+	color: #ccc;
+	padding: 0.125em 0.5em;
+	margin: 0.25em;
+	border: 1px solid #ccc;
+	border-radius: 0.25em;
 	background-color: transparent;
 }
 
 a:hover {
 	text-decoration: none;
-	color: red;
-	border: 1px solid red;
-	background-color: transparent;
+	color: #1a1a1a;
+	background-color: #fff;
+	transition: 0.5s;
 }
 
 /**
@@ -221,6 +223,7 @@ textarea {
 	font-family: inherit;
 	font-size: 100%;
 	line-height: 1.15;
+	letter-spacing: 0.125em;
 	margin: 0;
 }
 
@@ -413,7 +416,7 @@ input,
 select,
 optgroup,
 textarea {
-	color: #404040;
+	color: #cccccc;
 	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
 	font-size: 1rem;
 	line-height: 1.5;
@@ -479,7 +482,13 @@ big {
 /* Elements
 --------------------------------------------- */
 body {
-	background: #1a1a1a;
+	background-image: radial-gradient(#212121 16%, transparent 16%),
+		radial-gradient(#212121 16%, transparent 16%);
+	background-color: #1a1a1a;
+	background-position: 0 0, 16px 16px;
+	background-size: 32px 32px;
+	height: 64px;
+	width: 100%;
 }
 
 hr {
@@ -491,7 +500,7 @@ hr {
 
 ul,
 ol {
-	margin: 0 0 1.5em 3em;
+	padding: 0 1.5em 1.5em 3em;
 }
 
 ul {
@@ -618,7 +627,8 @@ input[type="datetime-local"],
 input[type="color"],
 textarea {
 	color: #666;
-	border: 1px solid #ccc;
+	border: 1px solid #666;
+	background-color: #000;
 	border-radius: 3px;
 	padding: 3px;
 }
@@ -639,7 +649,7 @@ input[type="datetime"]:focus,
 input[type="datetime-local"]:focus,
 input[type="color"]:focus,
 textarea:focus {
-	color: #111;
+	color: #fff;
 }
 
 select {
@@ -735,6 +745,25 @@ textarea {
 	margin: 0 0 1.5em;
 }
 
+/* For mobile phones */
+.site-main, .widget-area {
+	margin: 0 1.5em;
+}
+
+@media all and (min-width: 600px) {
+	/* For tablets */
+	.site-main, .widget-area {
+		margin: 0 5em;
+	}
+}
+
+@media all and (min-width: 768px) {
+	/* For desktop */
+	.site-main, .widget-area{
+		margin: 0 10em;
+	}
+}
+
 .site-branding {
 	width: 50%;
 }
@@ -760,7 +789,8 @@ textarea {
 }
 
 .main-navigation {
-	padding: 0 0.5em;
+	background-color: #333333;
+	padding: 0.5em;
 }
 
 .site-header {
@@ -804,11 +834,9 @@ textarea {
 	display: block;
 }
 
-.post {
-    border-width: 0 1px 1px 1px;
-	border-color: #090717;
+.post, .page, .widget, .comments-area{
 	background-color: #262626;
-	margin: 1.5em 20%;
+	margin: 1.5em 0;
 	box-shadow: 0px 0px 6px 6px rgba(0, 0, 0, 0.125);
 }
 
@@ -822,7 +850,7 @@ textarea {
 	display: none;
 }
 
-.entry-title {
+.entry-title, .widget-title {
 	color: #fff;
     font-size: 2.5vw;
 	letter-spacing: 0.5vw;
@@ -864,9 +892,6 @@ textarea {
 
 /* Widgets
 --------------------------------------------- */
-.widget {
-	margin: 0 0 1.5em;
-}
 
 .widget select {
 	max-width: 100%;
