@@ -123,26 +123,6 @@ pre {
 	 ========================================================================== */
 
 /**
- * Remove the gray background on active links in IE 10.
- */
-a {
-	text-decoration: none;
-	color: #ccc;
-	padding: 0.125em 0.5em;
-	margin: 0.25em;
-	border: 1px solid #ccc;
-	border-radius: 0.25em;
-	background-color: transparent;
-}
-
-a:hover {
-	text-decoration: none;
-	color: #1a1a1a;
-	background-color: #fff;
-	transition: 0.5s;
-}
-
-/**
  * 1. Remove the bottom border in Chrome 57-
  * 2. Add the correct text decoration in Chrome, Edge, IE, Opera, and Safari.
  */
@@ -482,12 +462,12 @@ big {
 /* Elements
 --------------------------------------------- */
 body {
-	background-image: radial-gradient(#212121 16%, transparent 16%),
-		radial-gradient(#212121 16%, transparent 16%);
+	background-image: radial-gradient(#262626 10%, transparent 10%),
+		radial-gradient(#262626 10%, transparent 10%);
 	background-color: #1a1a1a;
-	background-position: 0 0, 16px 16px;
-	background-size: 32px 32px;
-	height: 64px;
+	background-position: 0 0, 10px 10px;
+	background-size: 20px 20px;
+	height: 40px;
 	width: 100%;
 }
 
@@ -498,7 +478,7 @@ hr {
 	margin-bottom: 1.5em;
 }
 
-ul,
+.widget ul,
 ol {
 	padding: 0 1.5em 1.5em 3em;
 }
@@ -550,8 +530,47 @@ table {
 /* Links
 --------------------------------------------- */
 
-a {
-	color: #fff;
+.site-main a, .widget-area a {
+	text-decoration: none;
+	color: #bfbfbf;
+	padding: 0.1em 0.5em;
+	margin: 0.25em;
+	border-radius: 0.25em;
+	background-color: rgba(255, 255, 255, 0.1)
+}
+
+.site-main a:hover, .widget-area a:hover {
+	text-decoration: none;
+	color: #1a1a1a;
+	background-color: #bfbfbf;
+	transition: 1s;
+}
+
+.recentcomments a {
+	border: none;
+}
+
+.nav-menu a{
+	letter-spacing: 0.25vw;
+	color: #bfbfbf;
+	margin: 0 1.5em;
+	padding: 0.1em 0.5em;
+}
+
+.nav-menu a:hover{
+	text-decoration: none;
+	color: #1a1a1a;
+	background-color: #bfbfbf;
+	border-radius: 0.25em;
+	transition: 1s;
+}
+
+.nav-menu a::before {
+	content: "/";
+}
+
+.nav-menu a:hover::before {
+	content: "\\";
 }
 
 /*
@@ -583,11 +602,10 @@ button,
 input[type="button"],
 input[type="reset"],
 input[type="submit"] {
-	border: 1px solid;
-	border-color: #ccc #ccc #bbb;
-	border-radius: 3px;
-	background: #e6e6e6;
-	color: rgba(0, 0, 0, 0.8);
+	border: none;
+	border-radius: 0.25em;
+	background: linear-gradient(#666666, #595959);
+	color: #0d0d0d;
 	line-height: 1;
 	padding: 0.6em 1em 0.4em;
 }
@@ -596,7 +614,9 @@ button:hover,
 input[type="button"]:hover,
 input[type="reset"]:hover,
 input[type="submit"]:hover {
-	border-color: #ccc #bbb #aaa;
+	color: #1a1a1a;
+	background: linear-gradient(#999999,#a6a6a6);
+	transition: 1s;
 }
 
 button:active,
@@ -691,15 +711,15 @@ textarea {
 	z-index: 99999;
 }
 
+/*
 .main-navigation ul ul ul {
-	left: -999em;
-	top: 0;
+
 }
+*/
 
 .main-navigation ul ul li:hover > ul,
 .main-navigation ul ul li.focus > ul {
 	display: block;
-	left: auto;
 }
 
 .main-navigation ul ul a {
@@ -778,6 +798,38 @@ textarea {
 	opacity: 0.9;
 }
 
+.site-title a {
+	color: #fff;
+	text-decoration: none;
+}
+
+.site-title a::after {
+	content: "_";
+	animation: flash 2s infinite;
+}
+
+@keyframes flash {
+    50%{
+		color: transparent;
+	}
+  }
+
+.site-title:hover {
+	color: #1a1a1a;
+	background-color: #bfbfbf;
+	transition: 1s;
+}
+
+.site-title a:hover {
+	text-decoration: underline;
+	color: #1a1a1a;
+	transition: 1s;
+}
+
+.site-title a:hover::after {
+	content: "";
+}
+
 .site-description {
 	width: 50%;
 	background-color: #111;
@@ -789,7 +841,8 @@ textarea {
 }
 
 .main-navigation {
-	background-color: #333333;
+	background: linear-gradient(to right, rgba(255, 255, 255, 0.1),
+	 rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.1));
 	padding: 0.5em;
 }
 
@@ -800,6 +853,7 @@ textarea {
 .site-banner {
 	display: inline-block;
 	width: 100%;
+	height: 100%;
 }
 
 .site-branding {
@@ -840,6 +894,14 @@ textarea {
 	box-shadow: 0px 0px 6px 6px rgba(0, 0, 0, 0.125);
 }
 
+.search-form {
+	padding: 1em 1.5em;
+}
+
+.comment-form {
+	padding: 0 1.5em 0.5em 1.5em;
+}
+
 .page {
 	margin: 0 0 1.5em;
 }
@@ -850,7 +912,7 @@ textarea {
 	display: none;
 }
 
-.entry-title, .widget-title {
+.entry-title, .widget-title, .comment-reply-title, .comments-title {
 	color: #fff;
     font-size: 2.5vw;
 	letter-spacing: 0.5vw;
@@ -866,8 +928,8 @@ textarea {
 	padding: 0 1.5em 1.5em;
 }
 
-.entry-content {
-	padding: 0.5em 1.5em;
+.entry-content, .entry-summary {
+	padding: 0 1.5em;
 }
 
 .page-content,

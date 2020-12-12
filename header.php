@@ -27,9 +27,7 @@
 
 	<header id="masthead" class="site-header">
 	<?php if ( get_header_image() ) : ?>
-		<div class="site-banner">
-			<img src="<?php header_image(); ?>" alt="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>">
-		</div><!-- .site-banner -->
+		<img class="site-banner" src="<?php header_image(); ?>" alt="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>">
 	<?php endif; ?>
 
 		<div class="site-branding">
@@ -37,11 +35,11 @@
 			the_custom_logo();
 			if ( is_front_page() && is_home() ) :
 				?>
-				<p class="site-title"><?php bloginfo( 'name' ); ?></p>
+				<p class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a>
 				<?php
 			else :
 				?>
-				<p class="site-title"><?php bloginfo( 'name' ); ?></p>
+				<p class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a>
 				<?php
 			endif;
 			$cyberpunkcoder_description = get_bloginfo( 'description', 'display' );
