@@ -14,7 +14,9 @@
 		<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
 	</header><!-- .entry-header -->
 
-	<?php cyberpunkcoder_post_thumbnail(); ?>
+	<div class="post-thumbnail">
+				<?php the_post_thumbnail(); ?>
+	</div><!-- .post-thumbnail -->
 
 	<div class="entry-content">
 		<?php

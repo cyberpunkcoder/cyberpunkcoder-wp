@@ -35,11 +35,11 @@
 			the_custom_logo();
 			if ( is_front_page() && is_home() ) :
 				?>
-				<p class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a>
+				<p class="site-title"><?php bloginfo( 'name' ); ?></p>
 				<?php
 			else :
 				?>
-				<p class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a>
+				<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><p class="site-title"><?php bloginfo( 'name' ); ?></p></a>
 				<?php
 			endif;
 			$cyberpunkcoder_description = get_bloginfo( 'description', 'display' );
