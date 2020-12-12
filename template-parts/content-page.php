@@ -30,6 +30,9 @@
 		);
 		?>
 	</div><!-- .entry-content -->
+	
+	<div class="entry-footer">
+	</div><!-- .entry-footer -->
 
 	<?php if ( get_edit_post_link() ) : ?>
 		<footer class="entry-footer">
