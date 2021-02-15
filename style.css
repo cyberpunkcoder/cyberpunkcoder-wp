@@ -180,7 +180,11 @@ sup {
 
 /* Embedded content
 	 ========================================================================== */
-
+	 .github-embed {
+		background-color: rgb(25, 27, 28);
+		color: rgb(221, 218, 214);
+		box-shadow: #111 2px 2px 2px;
+	}
 /**
  * Remove the border on images inside links in IE 10.
  */
